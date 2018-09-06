@@ -5,7 +5,7 @@ class StudentsController < ApplicationController
   end
 
   def show
-    @student = Student.find(:id)
+    @student = Student.find(params[:id])
   end
 
   def new
@@ -19,11 +19,11 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Student.find(:id)
+    @student = Student.find(params[:id])
   end
 
   def update
-    @student = Student.find(:id)
+    @student = Student.find(params[:id])
     @student.update(student_params(:first_name, :last_name))
     @student.save
     redirect_to student_path
